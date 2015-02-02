@@ -211,7 +211,7 @@ void process_commands() {
 }
 
 void on_irkit_ready() {
-    color.setLedColor( 0, 0, 1, false ); // blue: ready
+    color.setLedColor( 0, 0, 0, false ); //blue:ready
 }
 
 void on_ir_receive() {
@@ -226,14 +226,14 @@ void on_ir_receive() {
         }
         int8_t cid = irkit_httpclient_post_messages();
         if (cid >= 0) {
-            color.setLedColor( 0, 0, 1, true, 1 ); // received: blue blink for 1sec
+            //color.setLedColor( 0, 0, 1, true, 1 ); // received: blue blink for 1sec
         }
     }
 }
 
 void on_ir_xmit() {
     MAINLOG_PRINTLN("i>");
-    color.setLedColor( 0, 0, 1, true, 1 ); // xmit: blue blink for 1sec
+    //color.setLedColor( 0, 0, 1, true, 1 ); //xmit: blue blink for 1sec
 }
 
 // inside ISR, be careful
